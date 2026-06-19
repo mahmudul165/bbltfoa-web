@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 216 216" role="img" aria-label="BBLTFOA logo">
+  <defs>
+    <radialGradient id="disc" cx="38%" cy="32%" r="75%">
+      <stop offset="0%" stop-color="#5cb860"/>
+      <stop offset="55%" stop-color="#3a9a3f"/>
+      <stop offset="100%" stop-color="#1b5e20"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6c453"/>
+      <stop offset="100%" stop-color="#c8901f"/>
+    </linearGradient>
+    <linearGradient id="leafL" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3f9e44"/>
+      <stop offset="100%" stop-color="#2e7d32"/>
+    </linearGradient>
+    <linearGradient id="leafT" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4caf50"/>
+      <stop offset="100%" stop-color="#86c98a"/>
+    </linearGradient>
+    <linearGradient id="leafR" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#52b657"/>
+      <stop offset="100%" stop-color="#a5d6a7"/>
+    </linearGradient>
+    <linearGradient id="stem" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6d4c34"/>
+      <stop offset="100%" stop-color="#9c7a5b"/>
+    </linearGradient>
+    <filter id="ds" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#0f3d14" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- ── Scalloped seal edge: base disc + 28 even bumps ── -->
+  <g filter="url(#ds)">
+    <circle cx="100" cy="100" r="86" fill="url(#disc)"/>
+    <g fill="url(#disc)">
+      <circle cx="190.0" cy="100.0" r="9.5"/>
+      <circle cx="187.7" cy="120.1" r="9.5"/>
+      <circle cx="181.1" cy="139.3" r="9.5"/>
+      <circle cx="170.4" cy="156.7" r="9.5"/>
+      <circle cx="156.7" cy="171.4" r="9.5"/>
+      <circle cx="140.3" cy="183.0" r="9.5"/>
+      <circle cx="121.8" cy="191.0" r="9.5"/>
+      <circle cx="101.9" cy="195.1" r="9.5"/>
+      <circle cx="81.7"  cy="195.1" r="9.5"/>
+      <circle cx="61.9"  cy="191.0" r="9.5"/>
+      <circle cx="43.3"  cy="183.0" r="9.5"/>
+      <circle cx="26.9"  cy="171.4" r="9.5"/>
+      <circle cx="13.3"  cy="156.7" r="9.5"/>
+      <circle cx="2.5"   cy="139.3" r="9.5"/>
+      <circle cx="10.0"  cy="100.0" r="9.5"/>
+      <circle cx="2.5"   cy="60.7"  r="9.5"/>
+      <circle cx="13.3"  cy="43.3"  r="9.5"/>
+      <circle cx="26.9"  cy="28.6"  r="9.5"/>
+      <circle cx="43.3"  cy="17.0"  r="9.5"/>
+      <circle cx="61.9"  cy="9.0"   r="9.5"/>
+      <circle cx="81.7"  cy="4.9"   r="9.5"/>
+      <circle cx="101.9" cy="4.9"   r="9.5"/>
+      <circle cx="121.8" cy="9.0"   r="9.5"/>
+      <circle cx="140.3" cy="17.0"  r="9.5"/>
+      <circle cx="156.7" cy="28.6"  r="9.5"/>
+      <circle cx="170.4" cy="43.3"  r="9.5"/>
+      <circle cx="181.1" cy="60.7"  r="9.5"/>
+      <circle cx="187.7" cy="79.9"  r="9.5"/>
+    </g>
+  </g>
+
+  <!-- Highlight ring on the seal -->
+  <circle cx="100" cy="100" r="83" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.5"/>
+
+  <!-- Cream ring -->
+  <circle cx="100" cy="100" r="79" fill="#f3eede"/>
+  <!-- Thin gold accent ring -->
+  <circle cx="100" cy="100" r="76.5" fill="none" stroke="url(#gold)" stroke-width="2.5"/>
+  <!-- Inner green ring -->
+  <circle cx="100" cy="100" r="73" fill="url(#disc)"/>
+  <!-- Inner cream hairline -->
+  <circle cx="100" cy="100" r="69.5" fill="#f3eede"/>
+  <!-- White centre -->
+  <circle cx="100" cy="100" r="67" fill="#ffffff"/>
+
+  <!-- ── Tea sprig (centered) ── -->
+  <!-- Stem -->
+  <path d="M100,151 C100,140 100,128 101,116 C102,105 103,95 105,86 C106,79 108,73 110,69"
+        stroke="url(#stem)" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+  <!-- Left leaf (large) -->
+  <path d="M101,116 C92,111 81,104 70,96 C65,91 61,84 61,77
+           C68,75 80,80 88,88 C94,94 99,104 101,116 Z" fill="url(#leafL)"/>
+  <path d="M101,116 C88,104 73,91 63,78" stroke="#19561d" stroke-width="0.9" fill="none" opacity="0.5"/>
+
+  <!-- Top bud leaf -->
+  <path d="M105,85 C109,75 115,66 122,59 C119,57 114,58 111,62 C108,66 105,74 105,85 Z"
+        fill="url(#leafT)"/>
+  <path d="M105,85 C111,74 116,66 121,60" stroke="#2e7d32" stroke-width="0.7" fill="none" opacity="0.45"/>
+
+  <!-- Right leaf (medium) -->
+  <path d="M103,123 C113,121 125,118 135,112 C139,109 141,104 140,99
+           C131,99 119,104 111,110 C107,113 104,118 103,123 Z" fill="url(#leafR)"/>
+  <path d="M103,123 C116,113 129,105 139,100" stroke="#2e7d32" stroke-width="0.7" fill="none" opacity="0.45"/>
+</svg>

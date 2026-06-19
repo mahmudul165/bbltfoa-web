@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(echo \"PID=$!\")",
+      "Read(//tmp/**)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(kill 5026)",
+      "Bash(curl -sf http://localhost:3000)",
+      "WebFetch(domain:bbltfoa.lovable.app)",
+      "WebFetch(domain:www.pexels.com)",
+      "Bash(cp \"/c/Users/dcl/Downloads/Mr Niaz Chisty.jpeg\" \"/c/web development project/nextjs-project/public/president.jpg\" && ls -lh \"/c/web development project/nextjs-project/public/president.jpg\" && file \"/c/web development project/nextjs-project/public/president.jpg\")"
+    ]
+  }
+}
