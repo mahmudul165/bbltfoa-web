@@ -107,38 +107,6 @@ export const latestNews: NewsArticle[] = [
       "BBLTFOA encourages members to maintain quality-based procurement practices that reward growers for delivering well-plucked, high-quality green leaf.",
     ],
   },
-  {
-    id: "5",
-    title: "BBLTFOA Promotes Good Agricultural Practices Among Growers",
-    excerpt:
-      "Training initiatives focused on quality plucking, soil health, and climate-resilient cultivation are helping growers raise both yield and leaf quality.",
-    date: "2026-04-02",
-    category: "Events",
-    slug: "good-agricultural-practices-training",
-    author: "Training Department",
-    content: [
-      "BBLTFOA has continued its programme of grower training, focusing on Good Agricultural Practices (GAP) that improve both the yield and quality of green leaf supplied to member factories.",
-      "Sessions cover proper plucking standards, soil health management, responsible use of inputs, and climate-resilient cultivation techniques suited to the northern tea-growing region.",
-      "By raising the standard of green leaf at the garden level, these initiatives help factories produce higher-quality made tea and strengthen the competitiveness of Bangladeshi tea.",
-      "The Association plans to expand its training calendar in partnership with research institutions and industry experts in the coming season.",
-    ],
-  },
-  {
-    id: "6",
-    title: "Sustainability and Worker Welfare at the Heart of Industry Growth",
-    excerpt:
-      "BBLTFOA underlines its commitment to environmental responsibility and the welfare of workers and growers across the bought leaf tea value chain.",
-    date: "2026-03-25",
-    category: "Industry News",
-    slug: "sustainability-worker-welfare",
-    author: "BBLTFOA Secretariat",
-    content: [
-      "As the bought leaf tea sector grows, BBLTFOA has placed sustainability and stakeholder welfare at the centre of its agenda.",
-      "The Association promotes environmentally responsible cultivation and processing practices among member factories, encouraging efficient resource use and responsible management of inputs.",
-      "Equally important is the welfare of the thousands of workers and small growers whose livelihoods depend on the industry. BBLTFOA supports initiatives that improve working conditions, fair returns, and rural prosperity.",
-      "The Association believes that a sustainable, people-centred approach is essential to securing the future of Bangladesh's tea sector and the communities it supports.",
-    ],
-  },
 ];
 
 export const upcomingEvents: Event[] = [
@@ -505,30 +473,6 @@ export const policyDocuments: PolicyDocument[] = [
     status: "proposed",
     date: "2026-01-20",
     category: "Labour",
-  },
-  {
-    id: "3",
-    title: "Tea Export Incentive Framework",
-    description: "Policy advocacy document calling for enhanced export incentives, duty drawback schemes, and trade facilitation.",
-    status: "under-review",
-    date: "2026-03-10",
-    category: "Trade",
-  },
-  {
-    id: "4",
-    title: "Environmental Compliance Guidelines for Tea Gardens",
-    description: "Industry-developed environmental standards for sustainable water use, chemical management, and land conservation.",
-    status: "adopted",
-    date: "2024-06-01",
-    category: "Environment",
-  },
-  {
-    id: "5",
-    title: "Small Garden Support Scheme",
-    description: "Proposed subsidy and technical support program targeting tea gardens with under 50 hectares in cultivation.",
-    status: "proposed",
-    date: "2026-04-05",
-    category: "Development",
   },
 ];
 
