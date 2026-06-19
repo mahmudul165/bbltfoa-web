@@ -1,8 +1,9 @@
 ﻿import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHeader } from "@/components/layout/page-header";
 import { upcomingEvents } from "@/data/mock-data";
 import { formatDate } from "@/lib/utils";
-import { MapPin, Clock, CalendarCheck, Users } from "lucide-react";
+import { MapPin, Clock, CalendarCheck, Users, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Events & Training",
@@ -14,6 +15,7 @@ const typeConfig: Record<string, { label: string; color: string; emoji: string }
   training: { label: "Training", color: "bg-tea-pale text-tea-green", emoji: "📚" },
   meeting: { label: "Meeting", color: "bg-blue-50 text-blue-700", emoji: "🤝" },
   seminar: { label: "Seminar", color: "bg-gold-light text-gold-dark", emoji: "🎤" },
+  national: { label: "National Observance", color: "bg-gold-light text-gold-dark", emoji: "🏵️" },
   other: { label: "Other", color: "bg-muted text-muted-foreground", emoji: "📅" },
 };
 
@@ -71,6 +73,11 @@ export default function EventsPage() {
                             Registration Open
                           </span>
                         )}
+                        {event.attendanceNote && (
+                          <span className="text-xs font-semibold text-tea-green bg-tea-pale px-2.5 py-1 rounded-full">
+                            {event.attendanceNote}
+                          </span>
+                        )}
                       </div>
                       <h3 className="text-lg font-bold text-foreground mb-3">{event.title}</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed mb-4">{event.description}</p>
@@ -80,6 +87,14 @@ export default function EventsPage() {
                         )}
                         <span className="flex items-center gap-1.5"><MapPin size={14} className="text-tea-green" />{event.venue}</span>
                       </div>
+                      {event.slug && (
+                        <Link
+                          href={`/events/${event.slug}`}
+                          className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-tea-green hover:text-tea-dark transition-colors"
+                        >
+                          View Details <ArrowRight size={14} />
+                        </Link>
+                      )}
                     </div>
 
                     {event.registrationOpen && (

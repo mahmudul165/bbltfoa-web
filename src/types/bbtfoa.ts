@@ -40,9 +40,20 @@ export interface Event {
   date: string;
   time?: string;
   venue: string;
-  type: "training" | "seminar" | "meeting" | "conference" | "other";
+  type: "training" | "seminar" | "meeting" | "conference" | "national" | "other";
   description: string;
   registrationOpen?: boolean;
+  slug?: string;
+  theme?: string;
+  organiser?: string;
+  attendanceNote?: string;
+  contactNumbers?: string[];
+  participants?: { role: string; name: string }[];
+  schedule?: { time: string; programme: string }[];
+  bsDate?: string;
+  kindlyNote?: string[];
+  invitationNote?: string;
+  issuedBy?: { name: string; designation: string }[];
 }
 
 export interface ExecutiveMember {

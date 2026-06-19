@@ -7,6 +7,7 @@ const typeStyle: Record<string, { badge: string; dot: string }> = {
   training:   { badge: "bg-tea-pale text-tea-green",    dot: "bg-tea-green" },
   meeting:    { badge: "bg-blue-50 text-blue-700",      dot: "bg-blue-400" },
   seminar:    { badge: "bg-gold-light text-gold-dark",  dot: "bg-gold" },
+  national:   { badge: "bg-gold-light text-gold-dark",  dot: "bg-gold" },
   other:      { badge: "bg-muted text-muted-foreground",dot: "bg-gray-400" },
 };
 
@@ -65,10 +66,16 @@ export function EventsPreview() {
                       <span className="line-clamp-2">{event.venue}</span>
                     </div>
                   </div>
-                  {event.registrationOpen && (
+                  {event.registrationOpen ? (
                     <div className="mt-4 pt-4 border-t border-border">
                       <Link href="/contact" className="inline-flex items-center gap-1.5 text-xs font-semibold text-tea-green hover:text-tea-dark transition-colors group/reg">
                         Register Now <ExternalLink size={11} className="transition-transform duration-200 group-hover/reg:translate-x-0.5 group-hover/reg:-translate-y-0.5" />
+                      </Link>
+                    </div>
+                  ) : event.slug && (
+                    <div className="mt-4 pt-4 border-t border-border">
+                      <Link href={`/events/${event.slug}`} className="inline-flex items-center gap-1.5 text-xs font-semibold text-tea-green hover:text-tea-dark transition-colors group/reg">
+                        View Details <ArrowRight size={11} className="transition-transform duration-200 group-hover/reg:translate-x-0.5" />
                       </Link>
                     </div>
                   )}
