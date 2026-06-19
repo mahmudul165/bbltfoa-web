@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Image from "next/image";
 import { PageHeader } from "@/components/layout/page-header";
 import { members, districts } from "@/data/mock-data";
 import {
@@ -29,20 +30,37 @@ function MemberCard({ member, index = 0 }: { member: Member; index?: number }) {
     >
       {/* Top: avatar + name + chips */}
       <div className="flex items-start gap-4">
-        <div className={`w-14 h-14 rounded-2xl ${theme} flex items-center justify-center shadow-md shrink-0 group-hover:scale-105 group-hover:-rotate-3 transition-all duration-300`}>
-          <Factory size={24} className="text-white" />
-        </div>
+        {member.imageUrl ? (
+          <div className="relative w-14 h-14 rounded-2xl overflow-hidden shadow-md shrink-0 ring-1 ring-border group-hover:scale-105 transition-all duration-300">
+            <Image src={member.imageUrl} alt={member.contactPerson} fill sizes="56px" className="object-cover object-top" />
+          </div>
+        ) : (
+          <div className={`w-14 h-14 rounded-2xl ${theme} flex items-center justify-center shadow-md shrink-0 group-hover:scale-105 group-hover:-rotate-3 transition-all duration-300`}>
+            <Factory size={24} className="text-white" />
+          </div>
+        )}
         <div className="min-w-0 flex-1">
-          <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-tea-green transition-colors line-clamp-2">
-            {member.factoryName}
-          </h3>
-          <div className="flex flex-wrap items-center gap-1.5 mt-2">
-            <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-tea-green bg-tea-pale rounded-full px-2 py-0.5">
-              <Hash size={9} /> {member.membershipId}
-            </span>
-            <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-gold-dark bg-gold-light rounded-full px-2 py-0.5">
-              <MapPin size={9} /> {member.district}
-            </span>
+          {member.factoryName && (
+            <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-tea-green transition-colors line-clamp-2">
+              {member.factoryName}
+            </h3>
+          )}
+          <div className={`flex flex-wrap items-center gap-1.5 ${member.factoryName ? "mt-2" : ""}`}>
+            {member.membershipId && (
+              <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-tea-green bg-tea-pale rounded-full px-2 py-0.5">
+                <Hash size={9} /> {member.membershipId}
+              </span>
+            )}
+            {member.district && (
+              <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-gold-dark bg-gold-light rounded-full px-2 py-0.5">
+                <MapPin size={9} /> {member.district}
+              </span>
+            )}
+            {member.designation && (
+              <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-tea-green bg-tea-pale rounded-full px-2 py-0.5">
+                {member.designation}
+              </span>
+            )}
           </div>
         </div>
       </div>
@@ -61,24 +79,28 @@ function MemberCard({ member, index = 0 }: { member: Member; index?: number }) {
             <span className="text-foreground font-semibold truncate block">{member.contactPerson}</span>
           </div>
         </div>
-        <div className="flex items-start gap-3">
-          <span className="w-8 h-8 rounded-lg bg-tea-pale flex items-center justify-center shrink-0">
-            <MapPin size={14} className="text-tea-green" />
-          </span>
-          <div className="min-w-0">
-            <span className="text-[10px] uppercase tracking-wider text-muted-foreground block leading-none mb-0.5">Address</span>
-            <span className="text-muted-foreground leading-snug">{member.address}</span>
+        {member.address && (
+          <div className="flex items-start gap-3">
+            <span className="w-8 h-8 rounded-lg bg-tea-pale flex items-center justify-center shrink-0">
+              <MapPin size={14} className="text-tea-green" />
+            </span>
+            <div className="min-w-0">
+              <span className="text-[10px] uppercase tracking-wider text-muted-foreground block leading-none mb-0.5">Address</span>
+              <span className="text-muted-foreground leading-snug">{member.address}</span>
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Call button */}
-      <a
-        href={`tel:${member.phone.replace(/\s/g, "")}`}
-        className="mt-5 inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-tea-pale text-tea-green font-semibold text-sm hover:bg-tea-green hover:text-white transition-colors duration-200"
-      >
-        <Phone size={15} /> {member.phone}
-      </a>
+      {member.phone && (
+        <a
+          href={`tel:${member.phone.replace(/\s/g, "")}`}
+          className="mt-5 inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-tea-pale text-tea-green font-semibold text-sm hover:bg-tea-green hover:text-white transition-colors duration-200"
+        >
+          <Phone size={15} /> {member.phone}
+        </a>
+      )}
     </div>
   );
 }
@@ -89,19 +111,40 @@ function MemberRow({ member, index }: { member: Member; index: number }) {
     <tr className={`border-b border-border last:border-0 hover:bg-tea-pale/60 transition-colors ${index % 2 ? "bg-tea-50/40" : ""}`}>
       <td className="px-4 py-4 text-sm font-semibold text-tea-green tabular-nums">{String(index + 1).padStart(2, "0")}</td>
       <td className="px-4 py-4">
-        <div className="font-semibold text-foreground text-sm leading-snug">{member.factoryName}</div>
-        <div className="text-[11px] text-muted-foreground mt-0.5">{member.membershipId}</div>
+        <div className="font-semibold text-foreground text-sm leading-snug">{member.factoryName ?? "—"}</div>
+        <div className="text-[11px] text-muted-foreground mt-0.5">{member.membershipId ?? member.designation ?? ""}</div>
       </td>
-      <td className="px-4 py-4 text-sm text-foreground">{member.contactPerson}</td>
+      <td className="px-4 py-4 text-sm text-foreground">
+        <div className="flex items-center gap-2.5">
+          {member.imageUrl ? (
+            <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0 ring-1 ring-border">
+              <Image src={member.imageUrl} alt={member.contactPerson} fill sizes="32px" className="object-cover object-top" />
+            </div>
+          ) : (
+            <span className="w-8 h-8 rounded-full bg-tea-pale text-tea-green flex items-center justify-center shrink-0">
+              <User size={13} />
+            </span>
+          )}
+          {member.contactPerson}
+        </div>
+      </td>
       <td className="px-4 py-4 text-sm text-muted-foreground">
-        <span className="inline-flex items-start gap-1.5">
-          <MapPin size={13} className="text-tea-green/70 shrink-0 mt-0.5" /> {member.address}
-        </span>
+        {member.address ? (
+          <span className="inline-flex items-start gap-1.5">
+            <MapPin size={13} className="text-tea-green/70 shrink-0 mt-0.5" /> {member.address}
+          </span>
+        ) : (
+          <span className="text-muted-foreground/60">Not yet available</span>
+        )}
       </td>
       <td className="px-4 py-4">
-        <a href={`tel:${member.phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-1.5 text-sm text-tea-green hover:text-white hover:bg-tea-green font-medium whitespace-nowrap transition-colors border border-tea-green/30 rounded-full px-3 py-1">
-          <Phone size={12} /> {member.phone}
-        </a>
+        {member.phone ? (
+          <a href={`tel:${member.phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-1.5 text-sm text-tea-green hover:text-white hover:bg-tea-green font-medium whitespace-nowrap transition-colors border border-tea-green/30 rounded-full px-3 py-1">
+            <Phone size={12} /> {member.phone}
+          </a>
+        ) : (
+          <span className="text-muted-foreground/60 text-sm">—</span>
+        )}
       </td>
     </tr>
   );
@@ -117,10 +160,10 @@ export default function MembersPage() {
     return members.filter((m) => {
       const matchSearch =
         !q ||
-        m.factoryName.toLowerCase().includes(q) ||
+        (m.factoryName ?? "").toLowerCase().includes(q) ||
         m.contactPerson.toLowerCase().includes(q) ||
-        m.address.toLowerCase().includes(q) ||
-        m.membershipId.toLowerCase().includes(q);
+        (m.address ?? "").toLowerCase().includes(q) ||
+        (m.membershipId ?? "").toLowerCase().includes(q);
       const matchDistrict = district === "All Districts" || m.district === district;
       return matchSearch && matchDistrict;
     });

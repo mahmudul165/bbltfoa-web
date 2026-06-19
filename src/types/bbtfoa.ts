@@ -58,14 +58,16 @@ export interface ExecutiveMember {
 
 export interface Member {
   id: string;
-  factoryName: string;        // Name of the factory / organization
+  factoryName?: string;       // Name of the factory / organization (if known)
   contactPerson: string;      // Owner / authorized contact name
-  address: string;            // Full address
-  district: string;
-  phone: string;              // Contact number
-  membershipId: string;
+  address?: string;           // Full address (if known)
+  district?: string;
+  phone?: string;              // Contact number (if known)
+  membershipId?: string;
   category: "ordinary" | "associate" | "honorary" | "life";
   email?: string;
+  designation?: string;        // e.g. "Member", "Advisor" — used when no factory role applies
+  imageUrl?: string;
 }
 
 export interface Publication {

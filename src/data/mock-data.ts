@@ -209,6 +209,7 @@ export const executiveCommittee: ExecutiveMember[] = [
     name: "Md. Shah Alam",
     designation: "Vice-President",
     company: "Bangla Tea Industries",
+    imageUrl: "/members/md-shah-alam.jpg",
     order: 3,
   },
   {
@@ -248,6 +249,7 @@ export const executiveCommittee: ExecutiveMember[] = [
     name: "Md. Mokhlesur Rahman",
     designation: "Executive Member",
     company: "Molli Tea Factory",
+    imageUrl: "/members/md-mokhlesur-rahman.jpg",
     order: 8,
   },
   {
@@ -403,6 +405,19 @@ export const members: Member[] = [
     district: "Panchagarh",
     phone: "01912 086505",
     membershipId: "BBLTFOA-18",
+    category: "ordinary",
+  },
+  {
+    id: "13",
+    contactPerson: "Faisal Rabbani Chowdhury",
+    designation: "Member",
+    category: "ordinary",
+  },
+  {
+    id: "14",
+    factoryName: "Maitree Tea Factory",
+    contactPerson: "Md. Abul Mansur",
+    designation: "Advisor",
     category: "ordinary",
   },
 ];
