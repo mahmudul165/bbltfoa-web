@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageHeader } from "@/components/layout/page-header";
 import { upcomingEvents } from "@/data/mock-data";
 import { formatDate } from "@/lib/utils";
-import { MapPin, Clock, CalendarCheck, Users, ArrowRight } from "lucide-react";
+import { MapPin, Clock, CalendarCheck, Users, ArrowRight, Landmark, CalendarDays, Trophy } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Events & Training",
@@ -86,7 +86,52 @@ export default function EventsPage() {
                           <span className="flex items-center gap-1.5"><Clock size={14} className="text-tea-green" />{event.time}</span>
                         )}
                         <span className="flex items-center gap-1.5"><MapPin size={14} className="text-tea-green" />{event.venue}</span>
+                        {event.organiser && (
+                          <span className="flex items-center gap-1.5"><Landmark size={14} className="text-tea-green" />{event.organiser}</span>
+                        )}
+                        {event.bsDate && (
+                          <span className="flex items-center gap-1.5"><CalendarDays size={14} className="text-tea-green" />{event.bsDate}</span>
+                        )}
                       </div>
+
+                      {(event.participants?.length || event.contactNumbers?.length) ? (
+                        <div className="mt-4 pt-4 border-t border-border grid sm:grid-cols-3 gap-3">
+                          {event.participants?.find((p) => p.role === "Chief Guest") && (
+                            <div className="flex items-center gap-2.5">
+                              <span className="w-8 h-8 rounded-lg bg-tea-pale flex items-center justify-center shrink-0">
+                                <Users size={14} className="text-tea-green" />
+                              </span>
+                              <div className="min-w-0">
+                                <span className="text-[10px] uppercase tracking-wider text-muted-foreground block leading-none mb-0.5">Chief Guest</span>
+                                <span className="text-xs font-semibold text-foreground truncate block">
+                                  {event.participants.find((p) => p.role === "Chief Guest")!.name.split(",")[0]}
+                                </span>
+                              </div>
+                            </div>
+                          )}
+                          <div className="flex items-center gap-2.5">
+                            <span className="w-8 h-8 rounded-lg bg-gold-light flex items-center justify-center shrink-0">
+                              <Trophy size={14} className="text-gold-dark" />
+                            </span>
+                            <div className="min-w-0">
+                              <span className="text-[10px] uppercase tracking-wider text-muted-foreground block leading-none mb-0.5">Highlight</span>
+                              <span className="text-xs font-semibold text-foreground truncate block">National Tea Award 2026</span>
+                            </div>
+                          </div>
+                          {event.contactNumbers && event.contactNumbers[0] && (
+                            <a href={`tel:${event.contactNumbers[0].replace(/[^\d+]/g, "")}`} className="flex items-center gap-2.5 group/contact">
+                              <span className="w-8 h-8 rounded-lg bg-tea-pale flex items-center justify-center shrink-0 group-hover/contact:bg-tea-green/20 transition-colors">
+                                <CalendarCheck size={14} className="text-tea-green" />
+                              </span>
+                              <div className="min-w-0">
+                                <span className="text-[10px] uppercase tracking-wider text-muted-foreground block leading-none mb-0.5">Enquiries</span>
+                                <span className="text-xs font-semibold text-foreground group-hover/contact:text-tea-green transition-colors truncate block">{event.contactNumbers[0]}</span>
+                              </div>
+                            </a>
+                          )}
+                        </div>
+                      ) : null}
+
                       {event.slug && (
                         <Link
                           href={`/events/${event.slug}`}

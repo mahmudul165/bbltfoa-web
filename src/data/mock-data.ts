@@ -181,6 +181,12 @@ export const upcomingEvents: Event[] = [
       "Kindly bring your invitation card (the card is non-transferable).",
       "Guests are requested to remain in their seats until the Chief Guest leaves the venue.",
     ],
+    invitationNote:
+      "Assalamu Alaikum. The celebration of the '6th National Tea Day' will be held on Saturday, 20 June 2026 (06 Ashar 1433 BS) at 11:00 AM at the Srimangal Auditorium cum Multipurpose Hall, Srimangal, Moulvibazar. The Hon'ble Minister of the Ministry of Commerce, Mr. Khandaker Abdul Muktadir, MP, has kindly consented to attend the programme as Chief Guest. You are cordially invited to attend.",
+    issuedBy: [
+      { name: "Major General Md. Mesbah Uddin Ahmed, SPP, NDC, AFWC, PSC", designation: "Chairman, Bangladesh Tea Board" },
+      { name: "Secretary", designation: "Ministry of Commerce" },
+    ],
   },
 ];
 
@@ -461,42 +467,6 @@ export const publications: Publication[] = [
     description:
       "Year-end bulletin with sector statistics, an events recap, and the outlook for the bought leaf tea industry in 2026.",
     fileSize: "2.0 MB",
-  },
-  {
-    id: "5",
-    title: "Good Agricultural Practices for Tea Growers",
-    type: "handbook",
-    year: 2025,
-    description:
-      "A practical field guide for small tea growers on quality plucking, soil health, responsible input use, and climate-resilient cultivation.",
-    fileSize: "5.4 MB",
-  },
-  {
-    id: "6",
-    title: "Green Leaf Quality & Grading Handbook",
-    type: "handbook",
-    year: 2024,
-    description:
-      "Reference handbook on green leaf quality standards, grading criteria, and procurement best practices for member factories.",
-    fileSize: "3.8 MB",
-  },
-  {
-    id: "7",
-    title: "Worker Welfare & Compliance Guidelines",
-    type: "handbook",
-    year: 2024,
-    description:
-      "Guidelines on worker welfare, fair wages, safe working conditions, and regulatory compliance across the bought leaf value chain.",
-    fileSize: "2.1 MB",
-  },
-  {
-    id: "8",
-    title: "Membership Information & Application Guide",
-    type: "newsletter",
-    year: 2026,
-    description:
-      "Everything a prospective member factory needs to know — benefits, eligibility, the application process, and Association services.",
-    fileSize: "1.2 MB",
   },
 ];
 
