@@ -10,11 +10,11 @@ export const navItems: NavItem[] = [
     href: "/about",
     children: [
       { label: "About BBLTFOA", href: "/about" },
-      { label: "President's Message", href: "/president-message" },
+      { label: "Member Directory", href: "/members" },
       { label: "Executive Committee", href: "/executive-committee" },
     ],
   },
-  { label: "Member Directory", href: "/members" },
+  { label: "President's Message", href: "/president-message" },
   { label: "Bangladesh Tea Industry", href: "/tea-industry" },
   { label: "Statistics & Reports", href: "/statistics" },
   { label: "Activities", href: "/activities" },
