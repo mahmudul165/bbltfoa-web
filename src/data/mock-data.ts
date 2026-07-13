@@ -474,6 +474,14 @@ export const policyDocuments: PolicyDocument[] = [
     date: "2026-01-20",
     category: "Labour",
   },
+  {
+    id: "3",
+    title: "Tea Industry Strategy Paper — Additional Recommendations",
+    description: "Four measures submitted to the Tea Industry Task Force on Strategy Formulation: VAT reduction, technical support for northern growers, mechanisation & renewable energy, and preferential tea exports to Pakistan.",
+    status: "proposed",
+    date: "2026-07-03",
+    category: "Strategy",
+  },
 ];
 
 export const productionData: StatReport[] = [
