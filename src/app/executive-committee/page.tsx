@@ -235,7 +235,7 @@ export default function ExecutiveCommitteePage() {
           {/* ── Executive Committee Board ── */}
           <div className="mb-20">
             <div className="text-center mb-12">
-              <span className="section-label mb-3">Governing Body</span>
+              <span className="section-label mb-3">Elected Leadership</span>
               <h2 className="mt-3 text-foreground">Executive Committee Board</h2>
             </div>
 
