@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import Image from "next/image";
 import { PageHeader } from "@/components/layout/page-header";
-import { Calendar, MapPin, Users, Quote, Leaf, Mic2, UserCheck, Camera } from "lucide-react";
+import { Calendar, Clock, MapPin, Users, Quote, Leaf, Mic2, UserCheck, Camera } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Activities",
@@ -36,6 +36,14 @@ const guests = [
   { name: "Amir Hossain", role: "Senior Official, Bangladesh Tea Board (Panchagarh region)" },
   { name: "Shahjahan", role: "President, Small Tea Garden Owners Association" },
   { name: "Anisuzzaman Pramanik", role: "Adviser, Small Tea Growers Association" },
+];
+
+/* Key logistics for the National Tea Day 2026 announcement */
+const inviteFacts = [
+  { icon: Calendar, label: "Date", value: "20 June 2026", detail: "6th National Tea Day" },
+  { icon: Clock, label: "Time", value: "11:00 AM", detail: "Programme inauguration" },
+  { icon: MapPin, label: "Venue", value: "Sreemangal Auditorium-cum-Multipurpose Hall", detail: "Sreemangal, Moulvibazar" },
+  { icon: UserCheck, label: "Inaugurated by", value: "Khandakar Abdul Muktadir", detail: "Commerce Minister" },
 ];
 
 /* Initials helper — drops the "Md." honorific for cleaner monograms */
@@ -424,6 +432,98 @@ export default function ActivitiesPage() {
                 </figcaption>
               </figure>
             ))}
+          </div>
+
+          {/* ── 6th National Tea Day invitation ── */}
+          <div className="mt-12 sm:mt-16 reveal">
+            <div className="relative overflow-hidden rounded-3xl border border-border bg-white shadow-lg">
+              <span aria-hidden className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-gold via-gold-vivid to-gold" />
+              <div className="grid md:grid-cols-[1.5fr_1fr]">
+                {/* Announcement */}
+                <div className="p-7 sm:p-9 lg:p-10">
+                  <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.18em] text-gold-dark">
+                    <Leaf size={12} /> Announcement
+                  </span>
+                  <h3 className="mt-3 text-xl sm:text-2xl font-semibold tracking-tight text-foreground">
+                    National Tea Day 2026
+                  </h3>
+                  <p className="mt-2.5 text-sm sm:text-[15px] font-medium italic text-tea-green leading-snug">
+                    Theme &mdash; &ldquo;Development of the Tea Industry, Greening the Economy&rdquo;
+                  </p>
+                  <div className="mt-5 space-y-3.5 text-sm sm:text-[15px] text-muted-foreground leading-relaxed">
+                    <p>
+                      Bangladesh Tea Board will celebrate National Tea Day 2026 in Sreemangal
+                      of Moulvibazar district on <strong className="text-foreground font-semibold">June 20</strong> with the theme
+                      &ldquo;Development of the Tea Industry, Greening the Economy.&rdquo;
+                    </p>
+                    <p>
+                      Commerce Minister <strong className="text-foreground font-semibold">Khandakar Abdul Muktadir</strong> is scheduled
+                      to inaugurate programmes at the Sreemangal Auditorium-cum-Multipurpose Hall,
+                      marking the day, according to a PID handout.
+                    </p>
+                    <p>
+                      According to Bangladesh Tea Board, though National Tea Day is observed
+                      annually on May 21, the formal celebration of this year&rsquo;s event has been
+                      scheduled for June 20.
+                    </p>
+                    <p>
+                      Bangladesh Tea Board Chairman <strong className="text-foreground font-semibold">Major General Md Mesbah Uddin Ahmed</strong> will
+                      deliver the welcome address, while Moulvibazar-4 MP Md Mujibur Rahman
+                      Chowdhury will attend the programme as a special guest, with Commerce
+                      Secretary Md Ataur Rahman Khan in the chair.
+                    </p>
+                    <p>
+                      Representatives of tea industry stakeholders and tea workers are also
+                      expected to participate in the discussion session.
+                    </p>
+                    <p>
+                      The programme will begin at 11:00am with the inauguration by the commerce
+                      minister, followed by the screening of a documentary on the tea industry and
+                      a discussion meeting.
+                    </p>
+                    <p>
+                      Following the discussion, the <strong className="text-foreground font-semibold">National Tea Awards 2026</strong> will be
+                      presented in eight categories in recognition of outstanding contributions to
+                      the country&rsquo;s tea sector.
+                    </p>
+                    <p>
+                      Besides, a special award will be introduced this year for the first time in
+                      the &ldquo;Best Bought Leaf Tea Factory&rdquo; category.
+                    </p>
+                    <p>
+                      A tea exhibition featuring the Bangladesh Tea Board and leading tea companies
+                      of the country will also be organised on the occasion.
+                    </p>
+                    <p>
+                      According to Tea Board data, Bangladesh currently has 172 tea gardens. Tea
+                      cultivation has also expanded significantly in the northern plains of the
+                      country in recent years.
+                    </p>
+                    <p>
+                      The National Tea Day celebration, being held in Sreemangal &ndash; widely known
+                      as the tea capital of Bangladesh &ndash; will mark the sixth edition of the event,
+                      bringing together stakeholders from across the tea industry.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Key logistics */}
+                <div className="border-t md:border-t-0 md:border-l border-border bg-tea-pale/30 p-7 sm:p-8 flex flex-col justify-start gap-5">
+                  {inviteFacts.map((f) => (
+                    <div key={f.label} className="flex items-start gap-3.5">
+                      <span className="w-10 h-10 rounded-xl bg-white ring-1 ring-border shadow-sm flex items-center justify-center shrink-0 text-tea-green">
+                        <f.icon size={17} />
+                      </span>
+                      <div className="min-w-0">
+                        <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{f.label}</div>
+                        <div className="text-sm font-semibold text-foreground leading-snug">{f.value}</div>
+                        {f.detail && <div className="text-xs text-muted-foreground mt-0.5">{f.detail}</div>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

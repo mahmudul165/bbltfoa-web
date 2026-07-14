@@ -223,7 +223,6 @@ export default function ExecutiveCommitteePage() {
     <>
       <PageHeader
         title="Executive Committee"
-        subtitle="Elected leadership of BBLTFOA — Bi-ennial Term 2026–2028."
         breadcrumbs={[
           { label: "About BBLTFOA", href: "/about" },
           { label: "Executive Committee" },
@@ -238,10 +237,6 @@ export default function ExecutiveCommitteePage() {
             <div className="text-center mb-12">
               <span className="section-label mb-3">Governing Body</span>
               <h2 className="mt-3 text-foreground">Executive Committee Board</h2>
-              <p className="text-muted-foreground text-sm mt-3 max-w-xl mx-auto">
-                The elected office bearers and members of BBLTFOA, arranged by their
-                position on the governing board for the 2026&ndash;2028 term.
-              </p>
             </div>
 
             {/* Board panel */}
@@ -251,16 +246,7 @@ export default function ExecutiveCommitteePage() {
               <div className="absolute inset-0 bg-dots opacity-40 pointer-events-none" aria-hidden />
 
               <div className="relative">
-                {/* Ribbon */}
-                <div className="flex justify-center mb-11">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-tea-darkest text-white/90 text-[11px] font-semibold tracking-wide px-4 py-1.5 shadow-md">
-                    <Leaf size={13} className="text-gold" />
-                    BBLTFOA · Bi-ennial Term 2026&ndash;2028
-                  </span>
-                </div>
-
                 {/* Tier 1 — Chief office bearers */}
-                <TierLabel>Chief Bearers</TierLabel>
                 <div className="flex flex-wrap justify-center gap-6 lg:gap-10">
                   {tier1.map((m) => (
                     <ChiefCard key={m.id} member={m} />
@@ -293,10 +279,6 @@ export default function ExecutiveCommitteePage() {
             <div className="text-center mb-12">
               <span className="section-label mb-3">Oversight</span>
               <h2 className="mt-3 text-foreground">Election Board</h2>
-              <p className="text-muted-foreground text-sm mt-2 max-w-xl mx-auto">
-                The independent board that oversaw the bi-ennial election of the
-                2026–2028 Executive Committee.
-              </p>
             </div>
             <div className="grid sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
               {electionBoard.map((m, i) => {
