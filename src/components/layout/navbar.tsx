@@ -12,6 +12,8 @@ import type { NavItem } from "@/types/bbtfoa";
 const barLabels: Record<string, string> = {
   "/": "Home",
   "/about": "About",
+  "/president-message": "President's Message",
+  "/executive-committee": "Executive Committee",
   "/members": "Member Directory",
   "/tea-industry": "Bangladesh Tea Industry",
   "/statistics": "Statistics & Reports",
@@ -152,7 +154,7 @@ export function Navbar() {
       {/* ── Desktop nav ──────────────────────────────────────────────── */}
       <nav className="hidden xl:block bg-tea-green">
         <div className="section-container">
-          <ul className="flex items-stretch justify-between">
+          <ul className="flex items-stretch justify-between gap-x-0.5">
             {navItems.map((item) => (
               <li key={item.href} className="relative">
                 {item.children ? (
@@ -161,10 +163,10 @@ export function Navbar() {
                       onMouseEnter={() => setOpenDropdown(item.href)}
                       onMouseLeave={() => setOpenDropdown(null)}
                       onClick={() => setOpenDropdown(openDropdown === item.href ? null : item.href)}
-                      className={`flex items-center gap-0.5 px-2 xl:px-2.5 py-3 text-[11.5px] xl:text-[12.5px] font-medium transition-all duration-150 whitespace-nowrap border-b-2 ${
+                      className={`flex items-center justify-center gap-0.5 px-1.5 py-3.5 text-[11px] font-medium tracking-tight transition-colors duration-150 whitespace-nowrap border-b-2 rounded-t-md ${
                         isActive(item.href)
-                          ? "bg-black/20 text-white border-gold"
-                          : "text-white/85 hover:text-white hover:bg-black/15 border-transparent"
+                          ? "bg-white/10 text-white border-gold"
+                          : "text-white/80 hover:text-white hover:bg-white/5 border-transparent"
                       }`}
                     >
                       {barLabels[item.href] ?? item.label}
@@ -183,10 +185,10 @@ export function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`flex items-center px-2 xl:px-2.5 py-3 text-[11.5px] xl:text-[12.5px] font-medium transition-all duration-150 whitespace-nowrap border-b-2 ${
+                    className={`flex items-center justify-center px-1.5 py-3.5 text-[11px] font-medium tracking-tight transition-colors duration-150 whitespace-nowrap border-b-2 rounded-t-md ${
                       isActive(item.href)
-                        ? "bg-black/20 text-white border-gold"
-                        : "text-white/85 hover:text-white hover:bg-black/15 border-transparent"
+                        ? "bg-white/10 text-white border-gold"
+                        : "text-white/80 hover:text-white hover:bg-white/5 border-transparent"
                     }`}
                   >
                     {barLabels[item.href] ?? item.label}

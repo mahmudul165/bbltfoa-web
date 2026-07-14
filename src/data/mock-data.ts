@@ -5,16 +5,10 @@
 
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
-  {
-    label: "About BBLTFOA",
-    href: "/about",
-    children: [
-      { label: "About BBLTFOA", href: "/about" },
-      { label: "Member Directory", href: "/members" },
-      { label: "Executive Committee", href: "/executive-committee" },
-    ],
-  },
+  { label: "About BBLTFOA", href: "/about" },
   { label: "President's Message", href: "/president-message" },
+  { label: "Executive Committee", href: "/executive-committee" },
+  { label: "Member Directory", href: "/members" },
   { label: "Bangladesh Tea Industry", href: "/tea-industry" },
   { label: "Statistics & Reports", href: "/statistics" },
   { label: "Activities", href: "/activities" },
