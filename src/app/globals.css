@@ -574,4 +574,45 @@
     border-color: var(--color-tea-green);
     box-shadow: 0 0 0 3px hsl(128 58% 36%/.12);
   }
+
+  /* ─── Executive Committee board (org chart) ─────────────────── */
+  .board-panel {
+    background:
+      radial-gradient(ellipse 55% 45% at 12% 0%,  hsl(128 58% 36%/.07) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 55% at 92% 100%, hsl(38 88% 50%/.07) 0%, transparent 60%),
+      linear-gradient(180deg, #ffffff 0%, hsl(126 52% 98%) 100%);
+  }
+
+  /* Horizontal distribution bar sitting above a tier of cards */
+  .board-bus { position: relative; }
+  .board-bus::before {
+    content: "";
+    position: absolute; top: -1.4rem; left: 12%; right: 12%; height: 2px;
+    background: linear-gradient(90deg,
+      transparent,
+      hsl(128 58% 40%/.45) 12%,
+      hsl(38 88% 50%/.55) 50%,
+      hsl(128 58% 40%/.45) 88%,
+      transparent);
+    border-radius: 9999px;
+  }
+  /* Central stem rising from the bar toward the tier above */
+  .board-bus::after {
+    content: "";
+    position: absolute; top: -2.75rem; left: 50%; transform: translateX(-50%);
+    width: 2px; height: 1.35rem;
+    background: linear-gradient(180deg, hsl(128 58% 40%/.3), hsl(38 88% 50%/.5));
+  }
+  /* Drop line from the bar down to each card */
+  .node-drop { position: relative; }
+  .node-drop::before {
+    content: "";
+    position: absolute; top: -1.4rem; left: 50%; transform: translateX(-50%);
+    width: 2px; height: 1.4rem;
+    background: linear-gradient(180deg, hsl(38 88% 50%/.5), hsl(128 58% 40%/.3));
+  }
+  @media (max-width: 767px) {
+    .board-bus::before, .board-bus::after,
+    .node-drop::before { display: none; }
+  }
 }

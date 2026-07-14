@@ -152,7 +152,12 @@ export function Navbar() {
       </div>
 
       {/* ── Desktop nav ──────────────────────────────────────────────── */}
-      <nav className="hidden xl:block bg-tea-green">
+      <nav
+        className="hidden xl:block relative shadow-[0_8px_20px_-10px_rgba(0,0,0,0.5)]"
+        style={{ background: "linear-gradient(180deg, hsl(129 57% 38%) 0%, hsl(132 55% 28%) 100%)" }}
+      >
+        {/* gold hairline separating logo bar from nav */}
+        <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
         <div className="section-container">
           <ul className="flex items-stretch justify-between gap-x-0.5">
             {navItems.map((item) => (
@@ -163,16 +168,22 @@ export function Navbar() {
                       onMouseEnter={() => setOpenDropdown(item.href)}
                       onMouseLeave={() => setOpenDropdown(null)}
                       onClick={() => setOpenDropdown(openDropdown === item.href ? null : item.href)}
-                      className={`flex items-center justify-center gap-0.5 px-1.5 py-3.5 text-[11px] font-medium tracking-tight transition-colors duration-150 whitespace-nowrap border-b-2 rounded-t-md ${
+                      className={`group relative flex items-center justify-center gap-0.5 px-1.5 py-3.5 text-[11px] font-semibold tracking-tight rounded-lg transition-all duration-200 whitespace-nowrap ${
                         isActive(item.href)
-                          ? "bg-white/10 text-white border-gold"
-                          : "text-white/80 hover:text-white hover:bg-white/5 border-transparent"
+                          ? "text-white bg-white/10"
+                          : "text-white/75 hover:text-white hover:bg-white/[0.07]"
                       }`}
                     >
-                      {barLabels[item.href] ?? item.label}
+                      <span className="relative">{barLabels[item.href] ?? item.label}</span>
                       <ChevronDown
                         size={12}
-                        className={`transition-transform duration-200 ${openDropdown === item.href ? "rotate-180" : ""}`}
+                        className={`relative transition-all duration-200 ${openDropdown === item.href ? "rotate-180 text-gold" : "text-white/60 group-hover:text-white/90"}`}
+                      />
+                      <span
+                        aria-hidden
+                        className={`pointer-events-none absolute bottom-1 left-1/2 -translate-x-1/2 h-[2.5px] rounded-full bg-gradient-to-r from-gold-vivid to-gold transition-all duration-300 ${
+                          isActive(item.href) ? "w-5 opacity-100" : "w-0 opacity-0 group-hover:w-4 group-hover:opacity-80"
+                        }`}
                       />
                     </button>
                     <div
@@ -185,13 +196,19 @@ export function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`flex items-center justify-center px-1.5 py-3.5 text-[11px] font-medium tracking-tight transition-colors duration-150 whitespace-nowrap border-b-2 rounded-t-md ${
+                    className={`group relative flex items-center justify-center px-1.5 py-3.5 text-[11px] font-semibold tracking-tight rounded-lg transition-all duration-200 whitespace-nowrap ${
                       isActive(item.href)
-                        ? "bg-white/10 text-white border-gold"
-                        : "text-white/80 hover:text-white hover:bg-white/5 border-transparent"
+                        ? "text-white bg-white/10"
+                        : "text-white/75 hover:text-white hover:bg-white/[0.07]"
                     }`}
                   >
-                    {barLabels[item.href] ?? item.label}
+                    <span className="relative">{barLabels[item.href] ?? item.label}</span>
+                    <span
+                      aria-hidden
+                      className={`pointer-events-none absolute bottom-1 left-1/2 -translate-x-1/2 h-[2.5px] rounded-full bg-gradient-to-r from-gold-vivid to-gold transition-all duration-300 ${
+                        isActive(item.href) ? "w-5 opacity-100" : "w-0 opacity-0 group-hover:w-4 group-hover:opacity-80"
+                      }`}
+                    />
                   </Link>
                 )}
               </li>
