@@ -47,12 +47,6 @@ const designationBadge: Record<string, { bg: string; text: string }> = {
   "Executive Member":       { bg: "bg-secondary text-secondary-foreground",text: "Executive Member"       },
 };
 
-const electionBoard = [
-  { name: "Md. Jahangir Alam",      role: "Chairman, Election Board" },
-  { name: "Md. Arifuzzaman Sumon",  role: "Member, Election Board" },
-  { name: "Furat Jahan Sathi",      role: "Member, Election Board" },
-];
-
 const locations: Record<string, string> = {
   "1": "Boyalimari, Jagdal, Panchagarh",
   "2": "Sarkarpara, Debiganj, Panchagarh",
@@ -271,40 +265,6 @@ export default function ExecutiveCommitteePage() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* ── Election Board ── */}
-          <div className="mt-20">
-            <div className="text-center mb-12">
-              <span className="section-label mb-3">Oversight</span>
-              <h2 className="mt-3 text-foreground">Election Board</h2>
-            </div>
-            <div className="grid sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
-              {electionBoard.map((m, i) => {
-                const photo = photoFor(m.name);
-                const isChair = m.role.startsWith("Chairman");
-                return (
-                  <div
-                    key={m.name}
-                    className="reveal group card-modern rounded-2xl p-6 flex flex-col items-center text-center"
-                    data-delay={String(i * 60)}
-                  >
-                    <div className="w-20 h-20 rounded-full overflow-hidden ring-4 ring-tea-pale bg-tea-pale flex items-center justify-center shadow-sm">
-                      {photo ? (
-                        <Image src={photo} alt={m.name} width={80} height={80} className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110" />
-                      ) : (
-                        <span className="text-xl font-black text-tea-green">{m.name.charAt(0)}</span>
-                      )}
-                    </div>
-                    <h4 className="text-sm font-bold text-foreground mt-3 leading-snug group-hover:text-tea-green transition-colors">{m.name}</h4>
-                    <span className={`inline-flex items-center gap-1 text-[10px] font-semibold px-2.5 py-0.5 rounded-full mt-2 ${isChair ? "bg-gold text-white" : "bg-tea-pale text-tea-green"}`}>
-                      {isChair && <Award size={10} />} {m.role}
-                    </span>
-                    <span className="text-[10px] text-muted-foreground/70 mt-1">BBLTFOA</span>
-                  </div>
-                );
-              })}
             </div>
           </div>
 
