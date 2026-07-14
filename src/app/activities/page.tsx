@@ -452,57 +452,58 @@ export default function ActivitiesPage() {
                   </p>
                   <div className="mt-5 space-y-3.5 text-sm sm:text-[15px] text-muted-foreground leading-relaxed">
                     <p>
-                      Bangladesh Tea Board will celebrate National Tea Day 2026 in Sreemangal
-                      of Moulvibazar district on <strong className="text-foreground font-semibold">June 20</strong> with the theme
+                      The Bangladesh Tea Board will celebrate National Tea Day 2026 on
+                      <strong className="text-foreground font-semibold"> June 20</strong> in Sreemangal, Moulvibazar, under the theme
                       &ldquo;Development of the Tea Industry, Greening the Economy.&rdquo;
                     </p>
                     <p>
-                      Commerce Minister <strong className="text-foreground font-semibold">Khandakar Abdul Muktadir</strong> is scheduled
-                      to inaugurate programmes at the Sreemangal Auditorium-cum-Multipurpose Hall,
-                      marking the day, according to a PID handout.
+                      According to a Press Information Department (PID) handout, Commerce Minister
+                      <strong className="text-foreground font-semibold"> Khandakar Abdul Muktadir</strong> will inaugurate the celebrations at the
+                      Sreemangal Auditorium-cum-Multipurpose Hall.
                     </p>
                     <p>
-                      According to Bangladesh Tea Board, though National Tea Day is observed
-                      annually on May 21, the formal celebration of this year&rsquo;s event has been
-                      scheduled for June 20.
+                      Although National Tea Day is officially observed every year on May 21, the
+                      formal celebration for this year has been rescheduled to June 20, according
+                      to the Bangladesh Tea Board.
+                    </p>
+                    <p>
+                      The programme will begin at <strong className="text-foreground font-semibold">11:00 AM</strong> with the inaugural ceremony,
+                      followed by the screening of a documentary highlighting the country&rsquo;s tea
+                      industry and a discussion session.
                     </p>
                     <p>
                       Bangladesh Tea Board Chairman <strong className="text-foreground font-semibold">Major General Md Mesbah Uddin Ahmed</strong> will
-                      deliver the welcome address, while Moulvibazar-4 MP Md Mujibur Rahman
-                      Chowdhury will attend the programme as a special guest, with Commerce
-                      Secretary Md Ataur Rahman Khan in the chair.
+                      deliver the welcome address. The event will be chaired by Commerce Secretary
+                      Md Ataur Rahman Khan, while Moulvibazar-4 Member of Parliament Md Mujibur
+                      Rahman Chowdhury will attend as the special guest.
                     </p>
                     <p>
-                      Representatives of tea industry stakeholders and tea workers are also
-                      expected to participate in the discussion session.
+                      Representatives from the tea industry, tea garden owners, tea workers, and
+                      other stakeholders are expected to participate in the discussion.
                     </p>
                     <p>
-                      The programme will begin at 11:00am with the inauguration by the commerce
-                      minister, followed by the screening of a documentary on the tea industry and
-                      a discussion meeting.
+                      Following the discussion session, the <strong className="text-foreground font-semibold">National Tea Awards 2026</strong> will be
+                      presented in eight categories to honour individuals and organisations for
+                      their outstanding contributions to the country&rsquo;s tea industry.
                     </p>
                     <p>
-                      Following the discussion, the <strong className="text-foreground font-semibold">National Tea Awards 2026</strong> will be
-                      presented in eight categories in recognition of outstanding contributions to
-                      the country&rsquo;s tea sector.
+                      This year, the Bangladesh Tea Board will also introduce a new special award
+                      for the first time in the &ldquo;Best Bought Leaf Tea Factory&rdquo; category.
                     </p>
                     <p>
-                      Besides, a special award will be introduced this year for the first time in
-                      the &ldquo;Best Bought Leaf Tea Factory&rdquo; category.
+                      To mark the occasion, a tea exhibition featuring the Bangladesh Tea Board and
+                      leading tea companies from across the country will also be organised.
                     </p>
                     <p>
-                      A tea exhibition featuring the Bangladesh Tea Board and leading tea companies
-                      of the country will also be organised on the occasion.
+                      According to Bangladesh Tea Board data, the country currently has
+                      <strong className="text-foreground font-semibold"> 172 tea gardens</strong>, while tea cultivation has expanded significantly
+                      in the northern plains in recent years.
                     </p>
                     <p>
-                      According to Tea Board data, Bangladesh currently has 172 tea gardens. Tea
-                      cultivation has also expanded significantly in the northern plains of the
-                      country in recent years.
-                    </p>
-                    <p>
-                      The National Tea Day celebration, being held in Sreemangal &ndash; widely known
-                      as the tea capital of Bangladesh &ndash; will mark the sixth edition of the event,
-                      bringing together stakeholders from across the tea industry.
+                      Widely recognised as the Tea Capital of Bangladesh, Sreemangal will host the
+                      sixth edition of the National Tea Day celebration, bringing together key
+                      stakeholders from across the nation&rsquo;s tea industry to promote sustainable
+                      growth and innovation in the sector.
                     </p>
                   </div>
                 </div>
